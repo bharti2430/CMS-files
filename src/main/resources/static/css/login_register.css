@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    background-image: url('/images/igdtuw.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-bottom: 2px solid #135107;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .logo {
+    position: absolute;
+    left: 20px;
+}
+.header .logo img {
+    height: auto;
+    width: 100px;
+    border-radius: 50%; /* Make the logo circular */
+}
+.header .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the text */
+}
+.header .heading h1 {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    color: #135107;
+    margin: 0; /* Remove default margin */
+}
+.header .heading p {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+    margin: 0; /* Remove default margin */
+}
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin-top: 150px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 6px 12px 6px 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.links a {
+    background-color: #3c8dbc;
+    border-color: #367fa9;
+    color: #fff;
+    padding: 6px 12px;
+    text-decoration: none;
+    margin: 0 5px;
+}

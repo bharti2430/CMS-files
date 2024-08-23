@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/complaint_register.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Complaint Registration Form</h2>
+
+        <form action="/registerComplaint" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="enrollmentNumber">Enrollment Number</label>
+                <input type="text" id="enrollmentNumber" name="enrollmentNumber" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" class="form-control" required pattern="[0-9]{10}" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course" name="course" class="form-control" required>
+                    <option value="" disabled selected>Select Course</option>
+                    <option value="BTech">BTech</option>
+                    <option value="BBA">BBA</option>
+                    <option value="BArch">BArch</option>
+                    <option value="MBA">MBA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="MTech">MTech</option>
+                    <option value="MPlan">MPlan</option>
+                    <option value="PhD">PhD</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" id="department" name="department" class="form-control" placeholder="Department" required />
+            </div>
+
+            <div class="form-group">
+                <label for="complaintType">Complaint Type</label>
+                <select id="complaintType" name="complaintType" class="form-control" required>
+                    <option value="">Select a type</option>
+                    <option value="academic">Academics</option>
+                    <option value="administrative">Administrative</option>
+                    <option value="technical">Technical</option>
+                    <option value="facility">Sanitation</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Complaint Description</label>
+                <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="attachment">Attachment</label>
+                <input type="file" id="attachment" name="attachment" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

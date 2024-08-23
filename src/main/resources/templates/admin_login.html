@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login_register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Admin Login</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="/images/logo.jpeg" alt="logo">  
+        </div>
+        
+        <div class="heading">
+            <h1>
+                Indira Gandhi Delhi Technical University for Women (IGDTUW)
+            </h1>
+            
+            <p>
+                Kashmere Gate, Delhi - 110006<br>
+                (An ISO 9001:2015 Certified University)
+            </p>
+        </div>
+    </div>
+    
+    <div class="container">
+    	<h2>Admin Login</h2>
+    	
+        <form action="/admin/admin_login" method="post">
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Official Email" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        
+        <div class="links">
+            <a href="#" class="forgot"><i class="fas fa-key"></i> Forgot Password?</a>
+        </div>
+    </div>
+</body>
+</html>
