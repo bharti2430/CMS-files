@@ -7,23 +7,22 @@
 </head>
 <body>
     <!-- Navbar copied from the dashboard -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/student/student">Dashboard</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/student_profile">My Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
-            </ul>
+    <nav class="navbar">
+        <a href="/student/dashboard" class="navbar-link">Dashboard</a>
+        
+        <div class="profile-dropdown">
+            <input type="checkbox" id="profile-toggle" class="profile-toggle">
+        
+            <label for="profile-toggle" class="profile-link">
+            	<img th:src="@{${profileImageUrl}}" alt="Profile Icon" class="profile-icon"/>
+            </label>
+        
+            <div class="dropdown-content">
+                <a href="/student_profile">My Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
         </div>
     </nav>
-
     <div class="container mt-5">
         <h1>My Profile</h1>
         

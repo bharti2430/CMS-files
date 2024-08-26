@@ -18,6 +18,8 @@ body
 h2 {
     color: #009933;
     margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
 }
 
 .form-group {

@@ -17,8 +17,11 @@ public class Complaint {
     private String complaintType;
     private String description;
     private String attachmentPath; // Path to the uploaded file
-
-    // Getters and Setters
+    private String status;
+    
+    public Complaint() {
+        this.status = "Pending"; // Default status
+    }
 
     public String getId() {
         return id;
@@ -98,5 +101,12 @@ public class Complaint {
 
     public void setAttachmentPath(String attachmentPath) {
         this.attachmentPath = attachmentPath;
+    }
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

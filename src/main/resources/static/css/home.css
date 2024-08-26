@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
 }
@@ -25,7 +25,7 @@ body {
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.8);
-    padding: 18px 20px;
+    padding: 5px 20px;
     border-bottom: 2px solid #135107;
     z-index: 9999;
     display: flex;
@@ -71,74 +71,22 @@ body {
     background-color: rgba(255, 255, 255, 0.9); 
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin-top: 120px; 
+    max-width: 90%;
+    margin-top: 100px; 
 }
 
-h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 24px; /* Consistent with home.css */
-    color: #000; /* Consistent with home.css */
+.btn {
+    background-color: #28a745; 
+    border-color: #28a745; 
+    margin-right: 10px;
 }
 
-.form-group {
-    position: relative;
-    margin-bottom: 15px;
+.btn:hover {
+    background-color: #218838; 
+    border-color: #1e7e34; 
 }
 
-.form-group i {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #000; /* Consistent with home.css */
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 6px 12px 6px 30px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-group input[type="submit"] {
-    background-color: #28a745; /* Consistent with home.css */
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.form-group input[type="submit"]:hover {
-    background-color: #218838; /* Consistent with home.css */
-}
-
-.links {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.links a {
-    background-color: #3c8dbc; /* Consistent with home.css */
-    border-color: #357abd; /* Consistent with home.css */
-    color: #fff;
-    padding: 6px 12px;
-    text-decoration: none;
-    margin: 0 5px;
-    border-radius: 4px;
-}
-
-.links a:hover {
-    background-color: #357abd; /* Consistent with home.css */
-}
-
-/* Responsive Styles */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -170,7 +118,12 @@ h2 {
 
     .container {
         padding: 15px;
-        margin-top: 150px; /* Increased margin-top to avoid overlap with header */
+        margin-top: 130px; /* Increased margin-top to avoid overlap with header */
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
     }
 }
 
@@ -192,24 +145,9 @@ h2 {
         padding: 15px;
         margin-top: 140px;
     }
-    
-    .form-group input,
-    .form-group select {
-        padding: 6px 10px 6px 30px;
-    }
 
-    .form-group i {
-        font-size: 14px;
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
     }
-
-    .links a {
-        padding: 4px 8px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 375px) {
-	.header .logo img {
-		display: none;
-	}
 }

@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complaint Registration Form</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/complaint_register.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
+	<nav class="navbar">
+        <a href="/student/student" class="navbar-link">Dashboard</a>
+        
+        <div class="profile-dropdown">
+            <input type="checkbox" id="profile-toggle" class="profile-toggle">
+        
+            <label for="profile-toggle" class="profile-link">
+            	<img th:src="@{${profileImageUrl}}" alt="Profile Icon" class="profile-icon"/>
+            </label>
+        
+            <div class="dropdown-content">
+                <a href="/student_profile">My Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <h2>Complaint Registration Form</h2>
 
         <form action="/registerComplaint" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="enrollmentNumber">Enrollment Number</label>
-                <input type="text" id="enrollmentNumber" name="enrollmentNumber" class="form-control" required />
+                <input type="text" id="enrollmentNumber" name="enrollmentNumber" th:value="${student.enrollmentNumber}" class="form-control" readonly />
             </div>
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-control" required />
+                <input type="text" id="name" name="name" th:value="${student.studentName}" class="form-control" readonly />
             </div>
 
             <div class="form-group">
@@ -29,7 +46,7 @@
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-control" required />
+                <input type="email" id="email" name="email" th:value="${student.email}" class="form-control" readonly />
             </div>
 
             <div class="form-group">

@@ -34,6 +34,9 @@ public class Student implements UserDetails {
 
     @Field("department")
     private String department;
+    
+    @Field("photo_path")
+    private String photoPath;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -121,5 +124,12 @@ public class Student implements UserDetails {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+    public String getPhotoPath() {
+        return photoPath;
+    }
+
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
     }
 }
