@@ -38,5 +38,17 @@ public class ComplaintService {
     public List<Complaint> getComplaintsByEmail(String email) {
         return complaintRepository.findByEmail(email);
     }
+    
+ // Method to get complaints by status
+    public List<Complaint> getComplaintsByStatus(String status) {
+        return complaintRepository.findByStatus(status);
+    }
+
+    // Method to update the status of a complaint
+    public void updateComplaintStatus(String id, String status) {
+        Complaint complaint = complaintRepository.findById(id).orElseThrow(() -> new RuntimeException("Complaint not found"));
+        complaint.setStatus(status);
+        complaintRepository.save(complaint);
+    }
 
 }

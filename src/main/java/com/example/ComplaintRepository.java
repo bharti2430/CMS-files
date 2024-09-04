@@ -11,4 +11,6 @@ public interface ComplaintRepository extends MongoRepository<Complaint, String> 
 
     // Custom method to find complaints by complaint type
     List<Complaint> findByComplaintType(String complaintType);
+
+	List<Complaint> findByStatus(String status);
 }

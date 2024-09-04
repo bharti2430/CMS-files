@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Complaints</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/admin/admin_dashboard">Admin Dashboard</a>
+        <div class="ml-auto">
+            <a href="/admin/logout" class="btn btn-outline-danger">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <h1>Pending Complaints</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Complaint Type</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="complaint : ${complaints}">
+                    <td th:text="${complaint.name}"></td>
+                    <td th:text="${complaint.email}"></td>
+                    <td th:text="${complaint.complaintType}"></td>
+                    <td th:text="${complaint.description}"></td>
+                    <td th:text="${complaint.status}"></td>
+                    <td>
+                        <form th:action="@{/admin/updateComplaintStatus}" method="post">
+                            <input type="hidden" name="id" th:value="${complaint.id}"/>
+                            <select name="status" class="form-control">
+                                <option value="Approved">Approved</option>
+                                <option value="Resolved">Resolved</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary mt-2">Update Status</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

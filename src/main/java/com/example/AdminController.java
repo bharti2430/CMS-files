@@ -16,6 +16,9 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
+    
+    @Autowired
+    private ComplaintService complaintService;
 
     private final PasswordEncoder passwordEncoder;
     
@@ -54,5 +57,16 @@ public class AdminController {
     @GetMapping("/admin/allComplaints")
     public String viewAllComplaints(Model model, Authentication authentication) {
         return "all_complaints"; // This should be the name of your HTML file
+    }
+    @GetMapping("/admin/pendingComplaints")
+    public String viewPendingComplaints(Model model) {
+        model.addAttribute("complaints", complaintService.getComplaintsByStatus("Pending"));
+        return "pending_complaints"; // Create a Thymeleaf template for this
+    }
+    @PostMapping("/admin/updateComplaintStatus")
+    public ModelAndView updateComplaintStatus(@RequestParam("id") String id,
+                                               @RequestParam("status") String status) {
+        complaintService.updateComplaintStatus(id, status);
+        return new ModelAndView("redirect:/admin/pendingComplaints");
     }
 }
