@@ -3,12 +3,13 @@
 <head>
     <title>Student Profile</title>
     <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar copied from the dashboard -->
     <nav class="navbar">
-        <a href="/student/dashboard" class="navbar-link">Dashboard</a>
+        <a href="/student/student" class="navbar-link">Dashboard</a>
         
         <div class="profile-dropdown">
             <input type="checkbox" id="profile-toggle" class="profile-toggle">
@@ -18,8 +19,8 @@
             </label>
         
             <div class="dropdown-content">
-                <a href="/student_profile">My Profile</a>
-                <a href="/logout">Logout</a>
+                <a href="/student/student_profile">My Profile</a>
+                <a href="/student/logout">Logout</a>
             </div>
         </div>
     </nav>

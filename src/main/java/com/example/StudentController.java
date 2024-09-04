@@ -188,19 +188,23 @@ public class StudentController {
         return "my_complaints"; // This should be the name of your HTML file
     }
 
-    @GetMapping("/student_profile")
+    @GetMapping("/student/student_profile")
     public String showStudentProfile(Model model, Authentication authentication) {
+        if (authentication == null) {
+            return "redirect:/student/login";
+        }
+
         String email = authentication.getName(); // Get logged-in user's email
         Student student = studentService.findStudentByEmail(email); // Fetch student details from DB
-        
-     // Correctly format the profile image URL
+
         String profileImageUrl = student.getPhotoPath() != null ? "/user_profile/" + student.getPhotoPath() : "/images/user-profile.jpg";
         model.addAttribute("student", student);
         model.addAttribute("profileImageUrl", profileImageUrl);
-        
-        model.addAttribute("student", student);
-        return "student_profile"; // Ensure this is the correct view name
+
+        return "student_profile";
     }
+
+
 
     @PostMapping("/student/updatePassword")
     public String updatePassword(@RequestParam("currentPassword") String currentPassword,
